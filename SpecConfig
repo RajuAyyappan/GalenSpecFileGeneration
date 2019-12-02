@@ -1,6 +1,3 @@
-package com.ibs.library.galen.models;
-
-import com.ibs.library.galen.components.TestDevice;
 
 public class SpecConfig {
 
@@ -35,15 +32,7 @@ public class SpecConfig {
     public TestDevice getDevice() {
         return device;
     }
-
-    /**
-     * TODO : filename should not be like this when reading from excel.
-                Suggestion : could be first column value (which is default HEADER)
-                            If default HEADER not found, set some Hard-coded-default (with increasing integer appended)
-     *          Recommended Format : PageName_FirstColumnValue.spec
-     *
-     * @return
-     */
+   
     public String getSpecFileName() {
         String fileName = this.getPageName() + "_" + this.getCurrentDeviceName() + ".spec";;
         return  fileName;
