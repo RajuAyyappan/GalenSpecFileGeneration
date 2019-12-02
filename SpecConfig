@@ -1,0 +1,66 @@
+package com.ibs.library.galen.models;
+
+import com.ibs.library.galen.components.TestDevice;
+
+public class SpecConfig {
+
+    String appName;
+    String pageName;
+    TestDevice device;
+    String specFileName;
+    String specFilePath;
+    String currentDeviceName;
+    String url;
+
+    public String getUrl() {
+		return url;
+	}
+
+	public SpecConfig(String pageName, TestDevice device, String appName,String specFilePath,String url){
+        this.pageName = pageName;
+        this.device = device;
+        this.appName = appName;
+        this.specFilePath = specFilePath;
+        this.url = url;
+    }
+
+    public String getAppName() {
+        return appName;
+    }
+
+    public String getPageName() {
+        return pageName;
+    }
+
+    public TestDevice getDevice() {
+        return device;
+    }
+
+    /**
+     * TODO : filename should not be like this when reading from excel.
+                Suggestion : could be first column value (which is default HEADER)
+                            If default HEADER not found, set some Hard-coded-default (with increasing integer appended)
+     *          Recommended Format : PageName_FirstColumnValue.spec
+     *
+     * @return
+     */
+    public String getSpecFileName() {
+        String fileName = this.getPageName() + "_" + this.getCurrentDeviceName() + ".spec";;
+        return  fileName;
+    }
+
+    public String getSpecDirPath() {
+        return this.getAppName() + "/specs/";
+    }
+
+    public String getSpecFilePath() {
+        String filePath = this.getAppName() + "/specs/" + this.getSpecFileName();
+        return filePath;
+    }
+
+    public String getCurrentDeviceName() {
+        return this.getDevice().getName();
+    }
+
+
+}
