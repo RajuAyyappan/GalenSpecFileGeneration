@@ -25,10 +25,9 @@ import org.slf4j.LoggerFactory;
 import com.galenframework.config.GalenConfig;
 import com.galenframework.config.GalenProperty;
 import com.galenframework.testng.GalenTestNgTestBase;
-import com.ibs.library.galen.models.SpecConfig;
 
 /**
- * Created by Raju Ayyappan on 02 Dec 2019
+ * Created by Raju Ayyappan on 02 12 2019
  */
 public class GalenSpecGenerator extends GalenTestNgTestBase {
 
